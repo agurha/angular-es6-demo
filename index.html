@@ -1,0 +1,30 @@
+<html>
+
+<script src="//content.momentum.co.za/content/general/javascript/angular/1.2.26/angular.min.js"></script>
+<script src="//content.momentum.co.za/content/general/javascript/angular/1.2.26/angular-route.min.js"></script>
+<script src="//content.momentum.co.za/content/general/javascript/angular/1.2.26/angular-resource.min.js"></script>
+<script src="//content.momentum.co.za/content/general/javascript/angular-ui-router/0.2.10/angular-ui-router-0.2.10.min.js"></script>
+<!-- Add other content server based libraries here -->
+
+<body>
+    <div id="Test1App" ng-controller="Test1Controller as myController">
+        <h1>Property 1: {{myController.dummyProperty}}</h1>
+        <h1>Property 2: {{myController.helloWorldProperty}}</h1>
+        <h1 style="color:olive">Function : {{myController.helloWorldFunction()}}</h1>
+        <div simple-directive>Test Div 1</div>
+        <complex-directive />
+    </div>
+</body>
+<!-- Add any application specific libraries here e.g. :
+<script src="${contentServerPath}resources/lib/somelib/somelib.min.js"></script>
+-->
+
+<script src="dist/js/app.min.js"></script>
+<script>
+    angular.element(document).ready(function () {
+        angular.bootstrap(document.getElementById("Test1App"), ['Test1App']);
+    });
+
+</script>
+
+</html>
