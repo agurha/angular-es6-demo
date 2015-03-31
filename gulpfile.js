@@ -150,11 +150,6 @@ gulp.task('clean', function (cb) {
     del([config.outputDir.root + '/*'], cb);
 });
 
-
-gulp.task('test', function (cb) {
-    return console.log(process.env.myserver);
-});
-
 // Default task - will also print the configuration used
 gulp.task('default', ['clean', 'copy-images', 'css', 'js'], function () {
     console.log("Config = ");
