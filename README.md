@@ -1,5 +1,8 @@
 # angular-es6-demo
-Demo project using ES6 in Angular with Gulp as the build tool
+Demo project using ES6 in Angular with Gulp as the build tool.
+The ES6 is transpiled using [browserify](http://browserify.org/) with the [babelify](https://github.com/babel/babelify) plugin and then minified using [ugliy2](https://github.com/mishoo/UglifyJS2). 
+
+This sample code was based on/inspired by [Exploring ES6 Classes In AngularJS 1.x](http://www.michaelbromley.co.uk/blog/350/exploring-es6-classes-in-angularjs-1-x?utm_content=buffer184f8&utm_medium=social&utm_source=plus.google.com&utm_campaign=buffer)
 
 Run **npm install** to install/update all dependencies
 
