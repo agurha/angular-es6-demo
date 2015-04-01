@@ -16,6 +16,8 @@ var buffer = require('vinyl-buffer');
 var less = require('gulp-less');
 var minifycss = require('gulp-minify-css');
 var imagemin = require('gulp-imagemin');
+var karma = require('karma').server;
+
 
 // Configuration section start ==========================================
 var inputDir = {
@@ -27,11 +29,13 @@ var inputFile = {
     min: 'app.js',
     full: inputDir.app + '/app.js',
     'less': 'app.less',
-    'lessFull': inputDir.less + '/app.less'
+    'lessFull': inputDir.less + '/app.less',
+    karmaConfig: __dirname + '/karma.conf.js'
 
 };
 var outputDir = {
     root: './dist',
+    buildRoot: './build',
     js: './dist/js',
     css: './dist/css',
     images: './dist/images',
@@ -149,6 +153,16 @@ gulp.task('copy-to-content-server', function () {
 gulp.task('clean', function (cb) {
     del([config.outputDir.root + '/*'], cb);
 });
+
+
+// Runs tests with karma
+gulp.task('test', function (done) {
+    karma.start({
+        configFile: inputFile.karmaConfig,
+        singleRun: true
+    }, done)
+});
+
 
 // Default task - will also print the configuration used
 gulp.task('default', ['clean', 'copy-images', 'css', 'js'], function () {
