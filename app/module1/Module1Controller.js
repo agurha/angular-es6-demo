@@ -2,6 +2,7 @@ class Module1Controller {
     /*@ngInject*/
     constructor($log) {
         this.aProperty = "A Property";
+        this.$log = $log;
         $log.debug('Module1Controller constructor completed.');
     }
 

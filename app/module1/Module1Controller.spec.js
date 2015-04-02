@@ -1,18 +1,21 @@
 import Module1Controller from './Module1Controller';
 
-describe('Module1Controller', function () {
+describe('Module1Controller', () => {
+    let cntrl;
     angular.module('testControllers', [])
         .controller('Module1Controller', Module1Controller);
 
     beforeEach(angular.mock.module('testControllers'));
-
-    it('should have a property aProperty', inject(function ($controller, $log) {
+    beforeEach(inject(($controller, $log) => {
         let $scope = {};
-        let cntrl = $controller('Module1Controller', {
+        cntrl = $controller('Module1Controller', {
             $scope: $scope,
             $log: $log
         });
+    }));
+
+    it('should have a property aProperty', () => {
         expect(cntrl.aProperty).toBeDefined();
         expect(cntrl.aFunction()).toEqual("A Property");
-    }));
+    });
 });

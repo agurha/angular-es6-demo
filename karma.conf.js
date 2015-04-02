@@ -20,15 +20,15 @@ module.exports = function (config) {
         coverageReporter: {
             dir: './build/coverage/',
             // Currently an issue with karma-coverage@0.2.7 - gives errors generating html/lcov reports
-            reporters: [{
-                type: 'html'
-            }, {
-                type: 'text' // Currently an issue with karma-coverage@0.2.7 - gives errors generating html/lcov reports
-            }, {
-                type: 'text-summary'
-            }, {
-                type: 'cobertura'
-            }]
+            reporters: [ //{         type: 'html'},
+                {
+                    type: 'text' // Currently an issue with karma-coverage@0.2.7 - gives errors generating html/lcov reports
+                }, {
+                    type: 'text-summary'
+                }, {
+                    type: 'cobertura'
+                }
+            ]
         },
         browserify: {
             debug: true,
