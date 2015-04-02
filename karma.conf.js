@@ -33,7 +33,7 @@ module.exports = function (config) {
         browserify: {
             debug: true,
             transform: ['babelify', istanbul({
-                ignore: ['**/*.spec.js']
+                ignore: ['**/*.spec.js', '**/app/utils.js']
             })]
         }
     });
