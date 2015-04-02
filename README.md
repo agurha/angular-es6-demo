@@ -15,4 +15,4 @@ Other gulp tasks
 * *watch* - will watch for any changes in the less or js files and will auto rebuild if required
 * *css*   - will only build the css
 * *js*    - will only build the javascript files (transpile ES6 code with browserify (babelify plugin) and then minify and generating source maps)
-
+* *test*  - will run unit tests
