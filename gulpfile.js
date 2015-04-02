@@ -151,7 +151,7 @@ gulp.task('copy-to-content-server', function () {
 
 // Cleans the output folder
 gulp.task('clean', function (cb) {
-    del([config.outputDir.root + '/*'], cb);
+    del([config.outputDir.root + '/*', config.outputDir.buildRoot + '/*'], cb);
 });
 
 
