@@ -5,7 +5,7 @@ class SimpleDirective {
         this.$interval = $interval;
 
         this.restrict = 'AE'; //Properties of DDO have to be attached to the instance through this reference
-        this.templateUrl = 'app/common/SimpleDirective.html';
+        this.templateUrl = 'app/common/SimpleView.html';
         this.scope = {};
     }
 }
