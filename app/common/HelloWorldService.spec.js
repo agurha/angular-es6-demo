@@ -1,6 +1,6 @@
 import HelloWorldService from './HelloWorldService';
 
-describe('HelloWorldServicer', () => {
+describe('HelloWorldService', () => {
     let service;
 
     angular.module('testServices', [])
