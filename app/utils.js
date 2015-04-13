@@ -31,6 +31,31 @@ var registerFn = function register(appName) {
                 originalCompileFn.apply(this, arguments);
 
                 if (constructorFn.prototype.link) {
+                    // use polyfill to monkeypatch Function.bind if not available
+                    if (!Function.prototype.bind) {
+                        console.log("Running in environment without bind support -- using polyfill to monkeypatch");
+                        Function.prototype.bind = function (oThis) {
+                            if (typeof this !== 'function') {
+                                // closest thing possible to the ECMAScript 5
+                                // internal IsCallable function
+                                throw new TypeError('Function.prototype.bind - what is trying to be bound is not callable');
+                            }
+
+                            var aArgs = Array.prototype.slice.call(arguments, 1),
+                                fToBind = this,
+                                fNOP = function () {},
+                                fBound = function () {
+                                    return fToBind.apply(this instanceof fNOP ? this : oThis,
+                                        aArgs.concat(Array.prototype.slice.call(arguments)));
+                                };
+
+                            fNOP.prototype = this.prototype;
+                            fBound.prototype = new fNOP();
+
+                            return fBound;
+                        };
+                    }
+                    // end polyfill
                     return constructorFn.prototype.link.bind(this);
                 }
             };
