@@ -105,7 +105,7 @@ var registerFn = function register(appName) {
         // get the array of dependencies that are needed by this component (as contained in the `$inject` array)
         var args = constructorFn.$inject || [];
         var factoryArray = args.slice(); // create a copy of the array
-        console.log(args);
+
         // This was changed to work correctly with directives (templateUrl)
         factoryArray.push((...args) => {
             var directive = new constructorFn(...args);
