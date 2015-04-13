@@ -62,8 +62,8 @@ var registerFn = function register(appName) {
         });
 
         var factoryArray = _createFactoryArray(constructorFn);
-
         app.directive(name, factoryArray);
+
         return this;
     }
 
@@ -80,7 +80,6 @@ var registerFn = function register(appName) {
         var constructorFn;
 
         if (input.constructor === Array) {
-            //
             var injected = input.slice(0, input.length - 1);
             constructorFn = input[input.length - 1];
             constructorFn.$inject = injected;
@@ -106,7 +105,7 @@ var registerFn = function register(appName) {
         // get the array of dependencies that are needed by this component (as contained in the `$inject` array)
         var args = constructorFn.$inject || [];
         var factoryArray = args.slice(); // create a copy of the array
-
+        console.log(args);
         // This was changed to work correctly with directives (templateUrl)
         factoryArray.push((...args) => {
             var directive = new constructorFn(...args);
