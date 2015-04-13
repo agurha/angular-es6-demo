@@ -6,13 +6,18 @@ module.exports = function (config) {
         browsers: ['PhantomJS'],
         frameworks: ['browserify', 'jasmine'],
         files: [
-            'vendor/angular/1.2.26/angular.min.js',
-            'vendor/angular/1.2.26/angular-mocks.js',
-            'app/**/*.spec.js'
+            'vendor/angular/1.4.0-rc.0/angular.min.js',
+            'vendor/angular/1.4.0-rc.0/angular-mocks.js',
+            'app/**/*.spec.js',
+            'app/**/*.html'
         ],
         exclude: [],
         preprocessors: {
-            'app/**/*.js': ['browserify']
+            'app/**/*.js': ['browserify'],
+            "app/**/*.html": ["ng-html2js"]
+        },
+        ngHtml2JsPreprocessor: {
+            moduleName: 'templates'
         },
         reporters: ['coverage', 'dots'],
         singleRun: true,
