@@ -1,9 +1,7 @@
 <html>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.0/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.0/angular-route.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.0/angular-resource.min.js"></script>
-<script src="//content.momentum.co.za/content/general/javascript/angular-ui-router/0.2.10/angular-ui-router-0.2.10.min.js"></script>
+<script src="/vendor/angular-new-router/0.5.2/router.es5.min.js"></script>
 <!-- Add other content server based libraries here -->
 
 <body>
@@ -11,8 +9,11 @@
         <h1>Property 1: {{myController.dummyProperty}}</h1>
         <h1>Property 2: {{myController.helloWorldProperty}}</h1>
         <h1 style="color:olive">Function : {{myController.helloWorldFunction()}}</h1>
+        <a ng-link="route1">Route1</a><a ng-link="route2">Route2</a>
+        <ng-viewport></ng-viewport>
         <div simple-directive>Test Div 1</div>
         <complex-directive />
+
     </div>
 </body>
 <!-- Add any application specific libraries here e.g. :
