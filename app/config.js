@@ -1,4 +1,4 @@
-"use strict"; // Required for now otherwise the /*ngInject*/ move to the wrong place in compiled functions as browserify aoto placesd üse strict"in functions (ES6 requirement)
+"use strict"; // Required for now otherwise the /*ngInject*/ move to the wrong place in transpiled functions as browserify auto places "use strict" in functions (ES6 requirement)
 
 /*@ngInject*/
 let configFunction = ($logProvider) => {
