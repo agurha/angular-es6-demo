@@ -1,12 +1,13 @@
 import HelloWorldService from './HelloWorldService';
 
 describe('HelloWorldService', () => {
+    const moduleName = 'HelloWorldService';
     let service;
 
-    angular.module('testServices', [])
+    angular.module(moduleName, [])
         .service('HelloWorldService', HelloWorldService);
 
-    beforeEach(angular.mock.module('testServices'));
+    beforeEach(angular.mock.module(moduleName));
     beforeEach(inject((_HelloWorldService_) => {
         service = _HelloWorldService_;
     }));

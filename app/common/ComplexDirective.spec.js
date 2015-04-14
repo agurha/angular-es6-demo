@@ -3,8 +3,8 @@ import register from '../utils';
 import Test1Controller from './Test1Controller';
 import HelloWorldService from './HelloWorldService';
 
-describe('ComplexDircetive', () => {
-    const moduleName = 'testDirectives';
+describe('ComplexDirective', () => {
+    const moduleName = 'ComplexDirective';
     let element, scope, clz;
     let html = '<div complex-directive>Test Div 1</div>';
 
@@ -18,7 +18,8 @@ describe('ComplexDircetive', () => {
         clz = new ComplexDirective($log);
         scope = $rootScope.$new();
         element = $compile(html)(scope);
-        scope.$digest();
+        scope.$log = $log;
+        scope.$apply();
     }));
 
     it('should be restricted to AE', () => {
@@ -30,13 +31,10 @@ describe('ComplexDircetive', () => {
     });
 
     it('should increment click count when clicked', () => {
-        console.log(element);
         let elem = element.find('H2')
-        console.log(elem.text());
         expect(elem.text()).toEqual('No of Clicks = 0');
-        compiled.click();
+        $(element).click();
         scope.$apply();
-        console.log(elem.text());
         expect(elem.text()).toEqual('No of Clicks = 1');
     });
 });

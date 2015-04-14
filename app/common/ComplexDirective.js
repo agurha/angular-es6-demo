@@ -6,7 +6,8 @@ class ComplexDirective {
         this.replace = true;
         this.restrict = 'AE'; //Properties of DDO have to be attached to the instance through this reference
         this.templateUrl = 'app/common/ComplexView.html';
-   //     this.$log.debug('ComplexDirective contructor completed');
+        this.bindToController = true;
+        this.$log.debug('ComplexDirective contructor completed');
     }
 
     link(scope, elem, attrs) {
@@ -15,12 +16,12 @@ class ComplexDirective {
             scope.cntrl.updateClicks();
             scope.$apply();
         });
-      //  this.$log.debug('ComplexDirective link completed');
+        this.$log.debug('ComplexDirective link completed');
     }
 
     compile(tElement) {
         tElement.css("background-color", "yellow");
-      //  this.$log.debug('ComplexDirective complie completed');
+        this.$log.debug('ComplexDirective complie completed');
     }
 }
 
