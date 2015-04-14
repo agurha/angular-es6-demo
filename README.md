@@ -1,16 +1,28 @@
 # AngularJS ES6 Demo
 This is a demo project to showcase/proof of concept using ES6 in AngularJS 1.4, and how such a project can be setup. 
+
+**Tools/Technologies used**
+* Angular 1.4
+* Angular new router
+* Gulp
+* BabelJS
+* Karma
+* Jasmine
+* Browserify
+* ngAnnotate
+* Imagemin
+* Less
+* UglifyJS2
+
 [Gulp](http://gulpjs.com/) is used as the build tool, and the ES6 transpiler chosen was [BabelJS](http://babeljs.io/).
 
-Technically, the ES6 is transpiled using [browserify](http://browserify.org/) with the [babelify](https://github.com/babel/babelify) plugin and then minified using [uglify2](https://github.com/mishoo/UglifyJS2).
+Technically, the ES6 is transpiled using [browserify](http://browserify.org/) with the [babelify](https://github.com/babel/babelify) and [ngAnnotate](https://github.com/omsmith/browserify-ngannotate) plugins and then minified using [uglify2](https://github.com/mishoo/UglifyJS2).
 
 Images are minified using [imagemin](https://www.npmjs.com/package/gulp-imagemin) and CSS are generated from [Less](https://github.com/plus3network/gulp-less) surce code.
 
 Unit testing uses [karma](http://karma-runner.github.io/0.12/index.html) with [jasmine](http://jasmine.github.io/2.2/introduction.html)
 
 This sample code was based on/inspired by [Exploring ES6 Classes In AngularJS 1.x](http://www.michaelbromley.co.uk/blog/350/exploring-es6-classes-in-angularjs-1-x?utm_content=buffer184f8&utm_medium=social&utm_source=plus.google.com&utm_campaign=buffer) and its demo project [Angular ES6](https://github.com/michaelbromley/angular-es6)
-
-Example includes the [Angulur-new-router](https://github.com/angular/router).
 
 ## Dependencies
 Gulp needs to be installed
