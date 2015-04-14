@@ -8,7 +8,7 @@ Images are minified using [imagemin](https://www.npmjs.com/package/gulp-imagemin
 
 Unit testing uses [karma](http://karma-runner.github.io/0.12/index.html) with [jasmine](http://jasmine.github.io/2.2/introduction.html)
 
-This sample code was based on/inspired by [Exploring ES6 Classes In AngularJS 1.x](http://www.michaelbromley.co.uk/blog/350/exploring-es6-classes-in-angularjs-1-x?utm_content=buffer184f8&utm_medium=social&utm_source=plus.google.com&utm_campaign=buffer) and its demo project ([Angular ES6](https://github.com/michaelbromley/angular-es6))
+This sample code was based on/inspired by [Exploring ES6 Classes In AngularJS 1.x](http://www.michaelbromley.co.uk/blog/350/exploring-es6-classes-in-angularjs-1-x?utm_content=buffer184f8&utm_medium=social&utm_source=plus.google.com&utm_campaign=buffer) and its demo project [Angular ES6](https://github.com/michaelbromley/angular-es6)
 
 Example includes the [Angulur-new-router](https://github.com/angular/router).
 
