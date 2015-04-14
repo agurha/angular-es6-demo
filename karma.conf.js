@@ -6,6 +6,7 @@ module.exports = function (config) {
         browsers: ['PhantomJS'],
         frameworks: ['browserify', 'jasmine'],
         files: [
+            'vendor/jQuery/2.1.3/jquery-2.1.3.min.js',
             'vendor/angular/1.4.0-rc.0/angular.min.js',
             'vendor/angular/1.4.0-rc.0/angular-mocks.js',
             'app/**/*.spec.js',
@@ -37,7 +38,7 @@ module.exports = function (config) {
         },
         browserify: {
             debug: true,
-            transform: ['babelify', istanbul({
+            transform: ['babelify', 'browserify-ngannotate', istanbul({
                 ignore: ['**/*.spec.js', '**/app/utils.js']
             })]
         }
