@@ -5,7 +5,7 @@ class ComplexDirective {
 
         this.replace = true;
         this.restrict = 'AE'; //Properties of DDO have to be attached to the instance through this reference
-        this.templateUrl = 'app/common/ComplexView.html';
+        this.templateUrl = 'app/common/ComplexDirective/ComplexView.html';
         this.bindToController = true;
         this.$log.debug('ComplexDirective contructor completed');
     }

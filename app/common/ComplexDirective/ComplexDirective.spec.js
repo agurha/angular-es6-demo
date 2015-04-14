@@ -1,7 +1,7 @@
 import ComplexDirective from './ComplexDirective';
-import register from '../utils';
-import Test1Controller from './Test1Controller';
-import HelloWorldService from './HelloWorldService';
+import register from '../../utils';
+import Test1Controller from '../Test1Controller';
+import HelloWorldService from '../HelloWorldService';
 
 describe('ComplexDirective', () => {
     const moduleName = 'ComplexDirective';
