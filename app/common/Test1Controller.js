@@ -1,10 +1,13 @@
 class Test1Controller {
     /*@ngInject*/
     constructor(HelloWorldService, $router) {
+        this.HelloWorldService = HelloWorldService;
+        this.$router = $router;
+
         this.noOfClicks = 0;
         this.dummyProperty = 'Hello from controller via ES6 !';
-        this.HelloWorldService = HelloWorldService;
         this.helloWorldProperty = HelloWorldService.greeting();
+
         this.configRouter($router);
     }
 
@@ -14,6 +17,10 @@ class Test1Controller {
 
     updateClicks() {
         this.noOfClicks = this.noOfClicks + 1;
+        if (this.noOfClicks > 5) {
+            this.$router.navigate('route1');
+        }
+
     }
 
     configRouter($router) {
