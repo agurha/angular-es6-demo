@@ -1,6 +1,6 @@
 import ng from 'angular';
 import register from './utils';
-import simpleDirective from './common/Simpledirective/SimpleDirective';
+import simpleDirective from './common/SimpleDirective/SimpleDirective';
 import complexDirective from './common/ComplexDirective/ComplexDirective';
 
 const moduleName = 'Test1App.directives';
