@@ -11,7 +11,7 @@ let configFunction = ($logProvider, $componentLoaderProvider) => {
     console.log('Config executed');
     $logProvider.debugEnabled(true); // Turns global logging with $log.debug on
 
-    // Setup newRouter so that it looks for components in ./app/components rather than ./components
+    // Setup newRouter so that it look for components in ./app/components rather than ./components
     $componentLoaderProvider.setTemplateMapping(function (name) {
         var dashName = dashCase(name);
         // customized to use app prefix
