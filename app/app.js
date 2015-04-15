@@ -1,6 +1,7 @@
 'use strict';
 import ng from 'angular';
 import controllers from './angularcontrollers';
+import components from './angularcomponents';
 import services from './angularservices';
 import directives from './angulardirectives';
 import configFunction from './config';
@@ -10,6 +11,7 @@ const appName = 'Test1App';
 let app = ng.module(appName, ['ngNewRouter',
     services.name,
     controllers.name,
+    components.name,
     directives.name
 ]);
 
