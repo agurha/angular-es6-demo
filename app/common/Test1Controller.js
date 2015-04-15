@@ -1,13 +1,16 @@
 class Test1Controller {
     /*@ngInject*/
     constructor(HelloWorldService, $router) {
+        // Set injectables to local properties
         this.HelloWorldService = HelloWorldService;
         this.$router = $router;
 
+        // Initialize any other properties
         this.noOfClicks = 0;
         this.dummyProperty = 'Hello from controller via ES6 !';
         this.helloWorldProperty = HelloWorldService.greeting();
 
+        // Call any other initialization functions
         this.configRouter();
     }
 
