@@ -8,7 +8,7 @@ class Test1Controller {
         this.dummyProperty = 'Hello from controller via ES6 !';
         this.helloWorldProperty = HelloWorldService.greeting();
 
-        this.configRouter($router);
+        this.configRouter();
     }
 
     helloWorldFunction() {
@@ -23,8 +23,8 @@ class Test1Controller {
 
     }
 
-    configRouter($router) {
-        $router.config([{
+    configRouter() {
+        this.$router.config([{
             path: '/route1',
             component: 'route1'
         }, {
