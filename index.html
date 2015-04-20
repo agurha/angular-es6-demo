@@ -3,6 +3,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.0/angular.min.js"></script>
 <script>
     window.angular || document.write(unescape('%3Cscript src="/vendor/angular/1.4.0-rc.0/angular.min.js"%3E%3C/script%3E'));
+
 </script>
 <script src="/vendor/angular-new-router/0.5.3/router.es5.min.js"></script>
 <!-- Add other content server based libraries here -->
@@ -12,8 +13,10 @@
         <h1>Property 1: {{myController.dummyProperty}}</h1>
         <h1>Property 2: {{myController.helloWorldProperty}}</h1>
         <h1 style="color:olive">Function : {{myController.helloWorldFunction()}}</h1>
+        <hr>
         <a ng-link="route1">Route1</a><a ng-link="route2">Route2</a>
         <ng-viewport></ng-viewport>
+        <hr>
         <div simple-directive>Test Div 1</div>
         <complex-directive />
 
