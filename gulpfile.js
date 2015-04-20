@@ -17,7 +17,7 @@ var less = require('gulp-less');
 var minifycss = require('gulp-minify-css');
 var imagemin = require('gulp-imagemin');
 var karma = require('karma').server;
-
+var spritesmith = require('gulp.spritesmith');
 
 // Configuration section start ==========================================
 var inputDir = {
@@ -121,7 +121,7 @@ gulp.task('lint', function (cb) {
 });
 
 // Compiles + minifies Less files
-gulp.task('css', function (cb) {
+gulp.task('css', ['sprite', 'copy-images'], function (cb) {
     return gulp.src(config.inputFile.lessFull)
         .pipe(less())
         .on('error', gutil.log.bind(gutil, 'Less Error'))
@@ -135,7 +135,7 @@ gulp.task('css', function (cb) {
 
 // Copies images in inputDir.images to destination folder
 gulp.task('copy-images', function (cb) {
-    return gulp.src(inputDir.images + '/**/*')
+    return gulp.src([inputDir.images + '/**/*', outputDir.buildRoot + '/sprite.png'])
         .pipe(imagemin())
         .pipe(gulp.dest(outputDir.images));
 
@@ -163,9 +163,20 @@ gulp.task('test', function (done) {
     }, done)
 });
 
+// Create sprites
+gulp.task('sprite', function () {
+    // Generate our spritesheet
+    var spriteData = gulp.src(inputDir.images + '/*.*')
+        .pipe(spritesmith({
+            imgName: 'sprite.png',
+            cssName: 'sprite.less',
+            imgPath: '../images/sprite.png'
+        }))
+        .pipe(gulp.dest(outputDir.buildRoot));
+});
 
 // Default task - will also print the configuration used
-gulp.task('default', ['clean', 'copy-images', 'css', 'js'], function () {
+gulp.task('default', ['css', 'js'], function () {
     console.log("Config = ");
     console.log(config);
 });
