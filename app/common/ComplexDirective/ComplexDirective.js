@@ -3,12 +3,14 @@ class ComplexDirective {
     constructor($log) {
         this.$log = $log;
 
-        this.restrict = 'AE'; //Properties of DDO have to be attached to the instance through this reference
+        //Properties of directive definition object have to be attached to the instance through the this reference
+        this.restrict = 'AE';
         this.templateUrl = 'app/common/ComplexDirective/ComplexView.html';
         this.scope = '';
         this.controller = 'Test1Controller';
         this.controllerAs = 'cntrl';
         this.bindToController = true;
+
         this.$log.debug('ComplexDirective contructor completed');
     }
 
