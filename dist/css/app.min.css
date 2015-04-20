@@ -1,2 +1,2 @@
-.carousel,.nav,.pagination,.panel-title a{cursor:pointer}H1{color:#00f}H2{background-color:green}
+.blue-header,.logo{display:inline-block}.carousel,.nav,.pagination,.panel-title a{cursor:pointer}.logo{background-image:url(../images/sprite.png);background-position:-100px 0;width:90px;height:60px}.blue-header{color:#00f}
 /*# sourceMappingURL=app.min.css.map */
