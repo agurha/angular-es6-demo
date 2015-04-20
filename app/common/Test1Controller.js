@@ -21,7 +21,7 @@ class Test1Controller {
     updateClicks() {
         this.noOfClicks = this.noOfClicks + 1;
         if (this.noOfClicks > 5) {
-            this.$router.navigate('route1');
+            this.$router.navigate('route2');
         }
 
     }
