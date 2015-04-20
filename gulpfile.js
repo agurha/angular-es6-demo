@@ -39,7 +39,7 @@ var outputDir = {
     js: './dist/js',
     css: './dist/css',
     images: './dist/images',
-    contentServer: process.env.content_server.replace(/"/g, '') // assumes an environment variable content_server
+    contentServer: (process.env.content_server || '').replace(/"/g, '') // assumes an environment variable content_server
 };
 var outputFile = {
     jsmin: 'app.min.js',
