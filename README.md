@@ -20,7 +20,7 @@ This is a demo project to showcase/proof of concept using ES6 in AngularJS 1.4, 
 Technically, the ES6 is transpiled using [browserify](http://browserify.org/) with the [babelify](https://github.com/babel/babelify) and [ngAnnotate](https://github.com/omsmith/browserify-ngannotate) plugins and then minified using [uglify2](https://github.com/mishoo/UglifyJS2).
 
 Images are minified using [imagemin](https://www.npmjs.com/package/gulp-imagemin) and CSS are generated from [Less](https://github.com/plus3network/gulp-less) surce code.
-Sprites can also be build using [gulp.spritesmith(https://github.com/twolfson/gulp.spritesmith)]
+Sprites can also be build using [gulp.spritesmith](https://github.com/twolfson/gulp.spritesmith).
 
 Unit testing uses [karma](http://karma-runner.github.io/0.12/index.html) with [jasmine](http://jasmine.github.io/2.2/introduction.html)
 
