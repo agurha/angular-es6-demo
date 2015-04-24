@@ -18,7 +18,6 @@ var minifycss = require('gulp-minify-css');
 var imagemin = require('gulp-imagemin');
 var karma = require('karma').server;
 var spritesmith = require('gulp.spritesmith');
-var replace = require('gulp-replace');
 
 // Configuration section start ==========================================
 var inputDir = {
@@ -145,14 +144,8 @@ gulp.task('copy-images', function (cb) {
 // Copies output folder to content server
 gulp.task('copy-to-content-server', function () {
     console.log("Content server = " + outputDir.contentServer);
-    var ts = new Date().toISOString().substring(0, 16) + '/dist/';
     return gulp.src(outputDir.root + '/**/*')
-        .pipe(gulp.dest(outputDir.contentServer + "/" + ts))
-        .pipe(gulp.src('./index.html'))
-        .pipe(replace(/dist\//g, ts))
-        .pipe(gulp.dest(outputDir.contentServer + "/" + ts));
-
-
+        .pipe(gulp.dest(outputDir.contentServer))
 });
 
 // Cleans the output folder
