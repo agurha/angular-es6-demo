@@ -71,7 +71,10 @@ var bundler_nowatch = browserify({
         insertGlobals: true
     })
     .add(config.inputFile.full)
-    .transform(babelify)
+    .transform(babelify.configure({
+        sourceMaps: 'both',
+        optional: 'runtime'
+    }))
     .transform(ngannotate);
 bundler_nowatch.on('log', gutil.log); // output build logs to terminal
 
@@ -83,7 +86,9 @@ function bundle(watch) {
     } else {
         bundler_to_use = bundler_nowatch;
     }
-    return bundler_to_use.bundle()
+
+    return bundler_to_use
+        .bundle()
         // log errors if they happen
         .on('error', gutil.log.bind(gutil, 'Browserify Error'))
         .pipe(source(config.inputFile.min))
