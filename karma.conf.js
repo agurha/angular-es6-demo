@@ -7,8 +7,8 @@ module.exports = function (config) {
         frameworks: ['browserify', 'jasmine'],
         files: [
             'vendor/jQuery/2.1.3/jquery-2.1.3.min.js',
-            'vendor/angular/1.4.0-rc.0/angular.min.js',
-            'vendor/angular/1.4.0-rc.0/angular-mocks.js',
+            'vendor/angular/1.4.0-rc.1/angular.min.js',
+            'vendor/angular/1.4.0-rc.1/angular-mocks.js',
             'app/**/*.spec.js',
             'app/**/*.html'
         ],

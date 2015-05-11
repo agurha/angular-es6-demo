@@ -18,7 +18,6 @@ var minifycss = require('gulp-minify-css');
 var imagemin = require('gulp-imagemin');
 var karma = require('karma').server;
 var spritesmith = require('gulp.spritesmith');
-var babel = require('gulp-babel');
 
 // Configuration section start ==========================================
 var inputDir = {
