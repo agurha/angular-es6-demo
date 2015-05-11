@@ -6,7 +6,7 @@ var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
 var del = require('del');
 var babelify = require("babelify");
-var ngannotate = require("browserify-ngannotate");
+var ngannotate = require("gulp-ng-annotate");
 var rename = require('gulp-rename');
 var eslint = require('gulp-eslint');
 var watchify = require('watchify');
@@ -18,6 +18,7 @@ var minifycss = require('gulp-minify-css');
 var imagemin = require('gulp-imagemin');
 var karma = require('karma').server;
 var spritesmith = require('gulp.spritesmith');
+var babel = require('gulp-babel');
 
 // Configuration section start ==========================================
 var inputDir = {
@@ -60,8 +61,11 @@ var bundler_watch = watchify(browserify({
         insertGlobals: true
     }))
     .add(config.inputFile.full)
-    .transform(babelify)
-    .transform(ngannotate);
+    .transform(babelify.configure({
+        sourceMapRelative: '.',
+        sourceMaps: 'inline',
+        optional: 'runtime'
+    }));
 
 bundler_watch.on('update', bundle); // on any dep update, runs the bundler
 bundler_watch.on('log', gutil.log); // output build logs to terminal
@@ -72,10 +76,10 @@ var bundler_nowatch = browserify({
     })
     .add(config.inputFile.full)
     .transform(babelify.configure({
-        sourceMaps: 'both',
+        sourceMapRelative: '.',
+        sourceMaps: 'inline',
         optional: 'runtime'
-    }))
-    .transform(ngannotate);
+    }));
 bundler_nowatch.on('log', gutil.log); // output build logs to terminal
 
 // Using browserified output, minify with uglify and generate sourcemaps
@@ -93,15 +97,19 @@ function bundle(watch) {
         .on('error', gutil.log.bind(gutil, 'Browserify Error'))
         .pipe(source(config.inputFile.min))
         .pipe(buffer())
+        .pipe(ngannotate())
         .pipe(gulp.dest(config.outputDir.js))
         .pipe(sourcemaps.init({
             loadMaps: true
         }))
         // Add transformation tasks to the pipeline here.
-        .pipe(uglify())
+        .pipe(uglify({
+            mangle: false
+        }))
         .pipe(rename(config.outputFile.jsmin))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(config.outputDir.js));
+
 }
 
 
@@ -113,7 +121,7 @@ gulp.task('js', function () {
 
 // Compiles css + js and then watches for changes and recompiles if required
 // Runs css task on startup as watch will only run when it changes
-gulp.task('watch', ['clean', 'css'], function () {
+gulp.task('watch', ['css'], function () {
     gulp.watch([inputDir.less + '/**/*.less'], ['css']);
     bundle(true);
 });
@@ -126,7 +134,7 @@ gulp.task('lint', function (cb) {
 });
 
 // Compiles + minifies Less files
-gulp.task('css', ['sprite', 'copy-images'], function (cb) {
+gulp.task('css', ['copy-images'], function (cb) {
     return gulp.src(config.inputFile.lessFull)
         .pipe(less())
         .on('error', gutil.log.bind(gutil, 'Less Error'))
@@ -139,7 +147,7 @@ gulp.task('css', ['sprite', 'copy-images'], function (cb) {
 });
 
 // Copies images in inputDir.images to destination folder
-gulp.task('copy-images', function (cb) {
+gulp.task('copy-images', ['sprite'], function (cb) {
     return gulp.src([inputDir.images + '/**/*', outputDir.buildRoot + '/sprite.png'])
         .pipe(imagemin())
         .pipe(gulp.dest(outputDir.images));
