@@ -14,8 +14,8 @@ module.exports = function (config) {
         ],
         exclude: [],
         preprocessors: {
-            'app/**/*.js': ['browserify'],
-            "app/**/*.html": ["ng-html2js"]
+            'app/**/*.js': ['browserify', 'ngannotate'],
+            "app/**/*.html": ['ng-html2js']
         },
         ngHtml2JsPreprocessor: {
             moduleName: 'templates'
@@ -38,7 +38,7 @@ module.exports = function (config) {
         },
         browserify: {
             debug: true,
-            transform: ['babelify', 'browserify-ngannotate', istanbul({
+            transform: ['babelify',  istanbul({
                 ignore: ['**/*.spec.js', '**/app/utils.js']
             })]
         }
