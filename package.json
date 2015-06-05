@@ -13,7 +13,7 @@
         "url": "https://github.com/starmage/angular-es6-demo.git"
     },
     "scripts": {
-        "test": "gulp test"
+        "test": "gulp default test"
     },
     "devDependencies": {
         "babel-runtime": "^5.2.17",
