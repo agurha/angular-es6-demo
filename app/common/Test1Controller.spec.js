@@ -6,7 +6,7 @@ describe('Test1Controller', () => {
     let cntrl;
     let helloWorldServiceObj = new HelloWorldService();
 
-    let mod = angular.module(moduleName, [])
+    let mod = angular.module(moduleName, ['ngNewRouter'])
         .controller('Test1Controller', Test1Controller);
 
     beforeEach(angular.mock.module(moduleName));
