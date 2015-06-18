@@ -4,7 +4,7 @@ var browserifynginject = require('browserify-nginject');
 module.exports = function (config) {
     config.set({
         basePath: '',
-        browsers: ['PhantomJS'],  // Bombs out on PhantimJS as Phantom doe snot support bind
+        browsers: ['PhantomJS'],
         frameworks: ['browserify', 'jasmine'],
         files: [
             './node_modules/phantomjs-polyfill/bind-polyfill.js',
