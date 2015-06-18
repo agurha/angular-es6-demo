@@ -1,4 +1,4 @@
-# AngularJS ES6 Demo [![Build Status](https://travis-ci.org/starmage/angular-es6-demo.svg?branch=master)](https://travis-ci.org/starmage/angular-es6-demo) [![devDependency Status](https://david-dm.org/starmage/angular-es6-demo/dev-status.svg)](https://david-dm.org/starmage/angular-es6-demo#info=devDependencies)
+# AngularJS ES6 Demo [![Build Status](https://travis-ci.org/starmage/angular-es6-demo.svg?branch=master)](https://travis-ci.org/starmage/angular-es6-demo) [![devDependency Status](https://david-dm.org/starmage/angular-es6-demo/dev-status.svg)](https://david-dm.org/starmage/angular-es6-demo#info=devDependencies) [![Coverage Status](https://coveralls.io/repos/starmage/angular-es6-demo/badge.svg?branch=master)]
 This is a demo project to showcase/proof of concept using ES6 in AngularJS 1.4, and how such a project can be setup. 
 
 **Tools/Technologies used**

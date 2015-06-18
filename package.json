@@ -13,7 +13,8 @@
     "url": "https://github.com/starmage/angular-es6-demo.git"
   },
   "scripts": {
-    "test": "gulp default test"
+    "test": "gulp default test",
+    "coveralls": "cat ./build/coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "devDependencies": {
     "babel-runtime": "^5.2.17",
@@ -22,6 +23,7 @@
     "browserify-istanbul": "^0.2.1",
     "browserify-nginject": "^1.4.1",
     "browserify-shim": "^3.8.6",
+    "coveralls": "^2.11.2",
     "del": "^1.1.1",
     "eslint": "^0.23.0",
     "gulp": "^3.8.11",

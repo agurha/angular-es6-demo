@@ -28,14 +28,17 @@ module.exports = function (config) {
         logLevel: config.LOG_DEBUG,
         coverageReporter: {
             dir: './build/coverage/',
-            // Currently an issue with karma-coverage@0.2.7 - gives errors generating html/lcov reports
             reporters: [ //{         type: 'html'},
                 {
-                    type: 'text' // Currently an issue with karma-coverage@0.2.7 - gives errors generating html/lcov reports
+                    type: 'text'
                 }, {
                     type: 'text-summary'
                 }, {
                     type: 'cobertura'
+                }, {
+                    type: 'lcovonly',
+                    subdir: '.',
+                    file: 'lcov.info'
                 }
             ]
         },

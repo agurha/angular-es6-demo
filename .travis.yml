@@ -3,3 +3,4 @@ node_js:
   - "0.12"
   - "node"
   - "iojs"
+after_success: 'npm run coveralls'
