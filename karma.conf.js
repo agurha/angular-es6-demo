@@ -25,7 +25,7 @@ module.exports = function (config) {
         },
         reporters: ['coverage', 'dots'],
         singleRun: true,
-        logLevel: config.LOG_INFO,
+        logLevel: config.LOG_DEBUG,
         coverageReporter: {
             dir: './build/coverage/',
             // Currently an issue with karma-coverage@0.2.7 - gives errors generating html/lcov reports
