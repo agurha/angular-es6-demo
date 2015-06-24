@@ -25,7 +25,7 @@ class ComplexDirective {
 
     compile(tElement) {
         tElement.css("background-color", "yellow");
-        this.$log.debug('ComplexDirective complie completed');
+        this.$log.debug('ComplexDirective compile completed');
     }
 }
 
