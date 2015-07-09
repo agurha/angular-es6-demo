@@ -18,6 +18,7 @@ var minifycss = require('gulp-minify-css');
 var imagemin = require('gulp-imagemin');
 var karma = require('karma').server;
 var spritesmith = require('gulp.spritesmith');
+var connect = require('gulp-connect');
 
 // Configuration section start ==========================================
 var inputDir = {
@@ -184,6 +185,14 @@ gulp.task('sprite', function () {
             imgPath: '../images/sprite.png'
         }))
         .pipe(gulp.dest(outputDir.buildRoot));
+});
+
+// Runs a local webserver to test application
+gulp.task('webserver', function () {
+    connect.server({
+        livereload: true,
+        port: 8083
+    });
 });
 
 // Default task - will also print the configuration used
