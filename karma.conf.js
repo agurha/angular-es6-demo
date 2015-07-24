@@ -9,8 +9,8 @@ module.exports = function (config) {
         files: [
             './node_modules/phantomjs-polyfill/bind-polyfill.js',
             'vendor/jQuery/2.1.3/jquery-2.1.3.min.js',
-            'vendor/angular/1.4.0/angular.min.js',
-            'vendor/angular/1.4.0/angular-mocks.js',
+            'vendor/angular/1.4.3/angular.min.js',
+            'vendor/angular/1.4.3/angular-mocks.js',
             'vendor/angular-new-router/0.5.3/router.es5.min.js',
             'app/**/*.spec.js',
             'app/**/*.html'
