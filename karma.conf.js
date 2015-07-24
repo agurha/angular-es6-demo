@@ -33,6 +33,7 @@ module.exports = function (config) {
                 file: 'cobertura-coverage.xml'
             }, {
                 type: 'lcovonly',
+                subdir: '.',
                 file: 'lcov.info'
             }, {
                 type: 'text-summary'
