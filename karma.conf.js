@@ -23,24 +23,24 @@ module.exports = function (config) {
         ngHtml2JsPreprocessor: {
             moduleName: 'templates'
         },
-        reporters: ['coverage', 'dots'],
+        reporters: ['coverage', 'junit'],
         singleRun: true,
-        logLevel: config.LOG_DEBUG,
+        logLevel: config.LOG_INFO,
         coverageReporter: {
             dir: './build/coverage/',
-            reporters: [ //{         type: 'html'},
-                {
-                    type: 'text'
-                }, {
-                    type: 'text-summary'
-                }, {
-                    type: 'cobertura'
-                }, {
-                    type: 'lcovonly',
-                    subdir: '.',
-                    file: 'lcov.info'
-                }
-            ]
+            reporters: [{
+                type: 'cobertura',
+                file: 'cobertura-coverage.xml'
+            }, {
+                type: 'lcovonly',
+                file: 'lcov.info'
+            }, {
+                type: 'text-summary'
+            }]
+        },
+        junitReporter: {
+            outputDir: './build/junit',
+            suite: ''
         },
         browserify: {
             debug: true,

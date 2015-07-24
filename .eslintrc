@@ -4,6 +4,8 @@
         "jsx": false
     },
     "env": {
+        "es6": true,
+        "node": true,
         "browser": true
     },
     "ecmaFeatures": {
@@ -25,5 +27,8 @@
         "global-strict": [0],
         "no-extra-strict": [0],
         "no-shadow": [0]
+    },
+     globals: {
+        'angular':false
     }
 }
